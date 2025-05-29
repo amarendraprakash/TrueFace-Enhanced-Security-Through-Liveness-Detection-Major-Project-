@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            
+            background: linear-gradient(to bottom, lightblue, lightpink);
+            text-align: center;
+            padding: 50px;
+            color: rgb(168, 37, 161);
+        }
+        img {
+            margin-top: 20px;
+            max-width: 300px;
+            border: 3px solid #333;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome!</h1>
+    <p>You have been successfully logged in.</p>
+    <img id="capturedImage" alt="Your face" />
+    <script>
+        // Retrieve the captured image from localStorage
+        const capturedImage = localStorage.getItem("capturedImage");
+        if (capturedImage) {
+            document.getElementById("capturedImage").src = capturedImage;
+        } else {
+            document.getElementById("capturedImage").alt = "No image captured";
+        }
+    </script>
+</body>
+</html>
